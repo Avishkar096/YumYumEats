@@ -80,7 +80,10 @@ class LoginPage extends StatelessWidget {
                   ),
                   ReusedButtonWidget(
                     onTap: () {
-                      if (email.isNotEmpty && password.isNotEmpty) {
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, homePage, (route) => false);
+
+                    /* if (email.isNotEmpty && password.isNotEmpty) {
                         BlocProvider.of<UserBloc>(context).add(
                           LoginUser(email: email, password: password),
                         );
@@ -90,7 +93,7 @@ class LoginPage extends StatelessWidget {
                             message: 'Enter all Fields',
                           ),
                         );
-                      }
+                      }*/
                     },
                     text: 'Sign In',
                   ),
